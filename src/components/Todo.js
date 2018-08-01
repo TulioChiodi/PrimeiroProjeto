@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { View, Text, StyleSheet } from 'react-native';
 
-export default class Todo extends Component {
-    static propTypes = {
-        title: PropTypes.string,
-    };
-    render(){
-        return(
-            <View>
-                <Text>Estudar o GoNative
-                </Text>
-            </View>
-        );
-    }
-}
+const Todo = ({ title }) => (
+    <View>
+        <Text>{title}</Text>
+    </View>
+);
+
+Todo.defaultProps = {
+    title: 'Todo padrão',
+};
+Todo.propTypes = {
+    title: PropTypes.string,
+};
 
 const styles = StyleSheet.create({
 
 });
+
+export default Todo;
