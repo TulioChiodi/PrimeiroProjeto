@@ -1,3 +1,5 @@
+import './config/ReactotronConfig';
+
 import React, {Component} from 'react';
 
 import {
@@ -8,8 +10,10 @@ import {
   Button,
 } from 'react-native';
 
+console.tron.log('Hello World');
+
 import Todo from './components/Todo'
-  
+
 
 export default class App extends Component {
   // componentDidMount(){
@@ -50,7 +54,7 @@ export default class App extends Component {
 
   addTodo = () => {
     this.setState({
-       todos: [ 
+       todos: [
          ...this.state.todos,
          { id: Math.random(), text:'Novo Todo'},
         ],
@@ -62,7 +66,7 @@ export default class App extends Component {
       <View style={styles.container}>
         {/*<Text>{this.state.text}</Text>
         <Button onPress={this.handleAddCounter} title="Add"/>
-        <Text>{this.state.counter}</Text> 
+        <Text>{this.state.counter}</Text>
         <Text>{this.state.usuario}</Text>
         { this.state.todos.map(todo => (
         <Todo key={todo.id} title={todo.text}/>
